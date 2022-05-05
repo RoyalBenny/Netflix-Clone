@@ -4,12 +4,10 @@ import "./Banner.css";
 import requests from "./request";
 const Banner = () => {
   const [movie, setMovie] = useState([]);
-  const truncate = (str,n)=>{
-      if(str.length > n)
-        return str.substr(0,n)+'...'
-    return str
-
-  }
+  const truncate = (str, n) => {
+    if (str.length > n) return str.substr(0, n - 1) + "...";
+    return str;
+  };
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchTrending);
@@ -30,7 +28,7 @@ const Banner = () => {
         movie && {
           backgroundSize: "cover",
           backgroundImage: `url(
-            "https://image.tmdb.org/t/p/original${movie?.poster_path}"
+            "https://image.tmdb.org/t/p/original${movie?.backdrop_path}"
         )`,
           backgroundPosition: "center center",
         }
@@ -40,15 +38,16 @@ const Banner = () => {
         <h1 className="banner__title">
           {movie?.title || movie?.original_title || movie?.name}
         </h1>
-        <div className="banner_buttons">
-          <button className="banner_button">Play</button>
-          <button className="banner_button">My List</button>
+        <div className="banner__buttons">
+          <button className="banner__button">Play</button>
+          <button className="banner__button">My List</button>
         </div>
         <div className="banner__description">
           {/* <p>{truncate(movie?.overview,300)}</p> */}
-          {movie?.overview && truncate(movie?.overview,150)}
+          {movie?.overview && truncate(movie?.overview, 100)}
         </div>
       </div>
+      <div className="banner--fadeBottom"/>
     </header>
   );
 };
