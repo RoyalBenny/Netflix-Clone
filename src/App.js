@@ -2,7 +2,7 @@ import './App.css';
 import Row from './Row';
 import request from './request';
 import Banner from './Banner';
-
+import Footer from './Footer';
 function App() {
   return (
     <div className='app'>
@@ -17,6 +17,7 @@ function App() {
         <Row title='Romance Movies' fetchURL={request.fetchRomanceMovies} />
         <Row title='Documentaries' fetchURL={request.fetchDocumentaries} />
       </div>
+      <Footer />
     </div>
   );
 }
