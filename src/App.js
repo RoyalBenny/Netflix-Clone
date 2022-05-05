@@ -3,9 +3,12 @@ import Row from './Row';
 import request from './request';
 import Banner from './Banner';
 import Footer from './Footer';
+import Nav from './Nav';
+
 function App() {
   return (
     <div className='app'>
+      <Nav/>
       <Banner />
       <div className='rows'>
         <Row title='Trending' fetchURL={request.fetchTrending} isLarge />
