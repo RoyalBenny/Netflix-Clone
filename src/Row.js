@@ -6,17 +6,19 @@ function Row({title,fetchURL}) {
     const [movies,setMovies] = useState([]);
 
     useEffect(()=>{
-        const result = axios.get(fetchURL);
-        result.then(
-            (data)=>setMovies(data)
-        ).catch((error)=>console.log(error))
+      async function fetchData(){
+        const request = await axios.get(fetchURL)
+        setMovies(request.data.results)
+  
+      }
+        fetchData()
     },[fetchURL])
 
-    console.table(movies)
+    console.log(movies)
 
   return (
     <div>
-        <h2>title</h2>
+        <h2>{title}</h2>
     </div>
   )
 }
