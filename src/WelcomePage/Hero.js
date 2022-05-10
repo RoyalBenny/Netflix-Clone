@@ -3,6 +3,7 @@ import netflix from "../image/netflix.png";
 import "./Hero.css";
 import tvImage from "../image/tv.png";
 import chidrenImage from "../image/cartoon.png"
+import tvVideo from "../videos/tv_video.m4v"
 import Footer from "../Footer";
 const Hero = () => {
   return (
@@ -103,7 +104,7 @@ const Hero = () => {
             </img>
             </div>
             <video className = "section_tv_video" autoPlay muted>
-                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4" />
+                <source src={tvVideo} type="video/mp4" />
               </video> 
           </div>
         </div>
@@ -153,7 +154,7 @@ const Hero = () => {
                   fontWeight: "400",
                 }}
               >
-                Send children on adventures with their favourite characters in a space made just for them—free with your membership.
+                Send children on adventures with their favourite characters in a space made just for them free with your membership.
               </h4>
             </div>
           </div>

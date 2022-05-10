@@ -1,6 +1,7 @@
 import axios from './axios'
 import React, { useEffect, useState } from 'react'
 import './Row.css'
+import { Link } from 'react-router-dom'
 function Row({ title, fetchURL, isLarge }) {
 
     const [movies, setMovies] = useState([]);
@@ -21,11 +22,26 @@ function Row({ title, fetchURL, isLarge }) {
                 <div className='row_posters'>
                     {movies.map((movie) => {
                         if (isLarge) {
-                            return <img className='row_poster' key={movie.id} src={`${base_url}${movie.backdrop_path}`} alt={movie.name || movie.original_title} />
+                            return (
+                                <Link key={movie.id} to={`detail/${movie.id}`}>
+                                    <img className='row_poster-trending'  src={`${base_url}${movie.backdrop_path}`} alt={movie.name || movie.original_title} />
+                                </Link>)
                         } else {
-                            return <img className='row_poster' key={movie.id} src={`${base_url}${movie.poster_path}`} alt={movie.name || movie.original_title} />
+                            return (
+                                <Link key={movie.id} to={`detail/${movie.id}`}>
+                                    <img className='row_poster' src={`${base_url}${movie.poster_path}`} alt={movie.name || movie.original_title} />
+                                </Link>
+                            )
                         }
-                    })}
+
+                        // return (<Link className='link' key={movie.id} to={`detail/${movie.id}`}>
+                            
+                        //              <img className='row_poster'  src={`${base_url}${movie.backdrop_path}`} alt={movie.name || movie.original_title} />
+                            
+                        // </Link>)
+                    })
+                    }
+
                 </div>
             </div>
         </div>
