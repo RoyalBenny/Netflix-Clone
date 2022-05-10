@@ -7,6 +7,7 @@ import { BsFillPauseFill } from 'react-icons/bs'
 import { BsPlusLg } from 'react-icons/bs'
 import Row from '../Row'
 import request from '../request'
+import Nav from '../Nav'
 
 function DetailPage() {
   const { id } = useParams()
@@ -32,6 +33,7 @@ function DetailPage() {
   console.log(movie)
   return (
     <div>
+              {localStorage.getItem("isLoggedIn") === 'true' && < Nav />}
       <header
         className="poster"
         style={

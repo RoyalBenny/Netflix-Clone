@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import netflix from './image/netflix.png';
 import profile from './image/profile-icon.jpg';
 import './Nav.css';
-
 function Nav() {
     const [show,setShow] = useState(false)
 
@@ -23,7 +22,9 @@ function Nav() {
   return (
     <div className={`nav-bar ${show && 'nav-bar-scroll'}` }>
         <img className='netflix' src={netflix} alt='Netflix Logo'/>
-        <img className='profile' src={profile} alt='profile icon'/>
+        <img className='profile' onClick={()=>{
+            localStorage.setItem("isLoggedIn",false)
+        }} src={profile} alt='profile icon'/>
     </div>
   )
 }

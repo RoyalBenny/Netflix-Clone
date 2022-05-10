@@ -5,7 +5,11 @@ import tvImage from "../image/tv.png";
 import chidrenImage from "../image/cartoon.png"
 import tvVideo from "../videos/tv_video.m4v"
 import Footer from "../Footer";
-const Hero = () => {
+import { Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
+
+const Hero = props => {
+  const navigate = useNavigate()
   return (
     <div className="hero">
       <section className="hero_section">
@@ -27,7 +31,9 @@ const Hero = () => {
                   <option value="hindi">Hindi</option>
                 </select>
               </div>
-              <button className="hero_signin">Sign In</button>
+              <Link to='/login'>
+                <button className="hero_signin">Sign In</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -47,9 +53,11 @@ const Hero = () => {
                 className="hero_email col-lg-7 col-md-12 col-sm-12"
                 placeholder="Email address"
               />
-              <button className="hero_get_started col-lg-4 col-md-5 col-sm-4">
-                Get Started &gt;
-              </button>
+                <button className="hero_get_started col-lg-4 col-md-5 col-sm-4" onClick={()=>{
+                  navigate("/login")
+                }}>
+                  Get Started &gt;
+                </button>
             </div>
           </div>
         </div>
@@ -100,12 +108,12 @@ const Hero = () => {
             <div className="img-fluid section_tv_image" >
               <img className="img-fluid h-50" src={tvImage} alt="tv" style={{
                 maxHeight: '400px',
-            }}>
-            </img>
+              }}>
+              </img>
             </div>
-            <video className = "section_tv_video" autoPlay muted>
-                <source src={tvVideo} type="video/mp4" />
-              </video> 
+            <video className="section_tv_video" autoPlay muted>
+              <source src={tvVideo} type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
@@ -120,7 +128,7 @@ const Hero = () => {
         }}
       >
         <div className="row justify-content-center  p-0 h-100">
-          
+
 
           <div className="col-12 col-lg-6 col-md-6 p-0 section_tv_col">
             {/* <img className="img-fluid h-75" src={tvImage} alt="tv" style={{
@@ -130,10 +138,10 @@ const Hero = () => {
             <div className="img-fluid" >
               <img className="img-fluid h-50" src={chidrenImage} alt="tv" style={{
                 maxHeight: '400px',
-            }}>
-            </img>
+              }}>
+              </img>
             </div>
-          
+
           </div>
 
           <div className="col-12 col-lg-6 col-md-6 p-0 section_tv_col">

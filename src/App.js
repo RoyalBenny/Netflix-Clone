@@ -2,23 +2,25 @@ import "./App.css";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import Hero from "./WelcomePage/Hero";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import DetailPage from "./DetailPage/DetailPage";
 import ProtectedRoute from "./ProtectedRoute";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import SignIn from "./SignIn/SignIn";
 
 function App() {
-  const login = localStorage.getItem("isLoggedIn")
+
+  const [login,setLogin] = useState(localStorage.getItem("isLoggedIn"))
   useEffect(()=>{
     
   },[login])
   return (
     <div className="app">
-      {localStorage.getItem("isLoggedIn") === 'true' && < Nav />}
       <BrowserRouter>
         <Routes>
           <Route path="/Hero" element={<Hero/>} />
+          <Route path='/login' element={<SignIn/>}/>
           <Route path="/" element={<ProtectedRoute />}>
             <Route index element={<Home/>} />
             {/* <ProtectedRoute
@@ -32,7 +34,7 @@ function App() {
             <Route exact path="/detail/:id" element={<DetailPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> 
       <Footer />
     </div>
   );
