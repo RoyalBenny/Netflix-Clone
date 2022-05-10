@@ -1,0 +1,75 @@
+.poster{
+    color: white;
+    object-fit: contain;
+    height: 90vh;
+    width: 100%;
+}
+
+.poster--fadeBottom{
+    height: 50rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37,37,37,0.61),
+        #111
+    );
+}
+
+.poster--fadeLeft{
+    height: 100%;
+    width: 75%;
+    background-image: linear-gradient(
+        270deg,
+        transparent,
+        rgba(37,37,37,0.90),
+        #111
+    );
+}
+
+.movie-detial-name{
+    width: 50%;
+    padding-top: 10rem;
+    padding-left: 10rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 90-large;
+}
+
+.movie-detail-name-h5{
+    width: 40%;
+    padding-top: 2rem;
+    padding-left: 10rem;
+}
+
+.movie-detail-properties{
+    padding-left: 10rem;
+    padding-top: 1rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: gray;
+}
+
+.movie__description{
+    padding-left: 10rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    width: 30%;
+    padding-top: 1rem;
+}
+
+.play-button{
+    min-width: fit-content;
+    max-width: 25rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    padding: 10px;
+    padding-bottom: 2px;
+    transition: transform 300ms;
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.play-button:hover{
+    border: solid 3px #FFFF;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
