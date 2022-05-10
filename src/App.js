@@ -4,11 +4,15 @@ import request from './request';
 import Banner from './Banner';
 import Footer from './Footer';
 import Nav from './Nav';
+import Hero from './WelcomePage/Hero';
 
 function App() {
   return (
     <div className='app'>
-      <Nav/>
+
+      <Hero />
+
+      {/* <Nav/>
       <Banner />
       <div className='rows'>
         <Row title='Trending' fetchURL={request.fetchTrending} isLarge />
@@ -20,7 +24,7 @@ function App() {
         <Row title='Romance Movies' fetchURL={request.fetchRomanceMovies} />
         <Row title='Documentaries' fetchURL={request.fetchDocumentaries} />
       </div>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
