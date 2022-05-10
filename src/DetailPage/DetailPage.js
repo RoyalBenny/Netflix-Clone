@@ -70,8 +70,8 @@ function DetailPage() {
                 <BsFillPauseFill style={{ paddingTop: '1px' }} /> Play Continune
               </p>
               {movie?.runtime &&
-                <div class="progress" style={{ width: '10rem', marginLeft: '10px', marginTop: '2px' }}>
-                  <div class="progress-bar" role="progressbar" style={{ width: `${(movie?.runtime / 100) * 30}%` }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{(movie?.runtime / 100) * 30}%</div>
+                <div className="progress" style={{ width: '10rem', marginLeft: '10px', marginTop: '2px' }}>
+                  <div className="progress-bar" role="progressbar" style={{ width: `${(movie?.runtime / 100) * 30}%` }} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">{(movie?.runtime / 100) * 30}%</div>
                 </div>
               }
             </div>

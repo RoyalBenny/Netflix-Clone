@@ -23,7 +23,7 @@ function Row({ title, fetchURL, isLarge }) {
                     {movies.map((movie) => {
                         if (isLarge) {
                             return (
-                                <Link key={movie.id} to={`detail/${movie.id}`}>
+                                <Link key={movie.id} to={`detail/${movie.id}`} >
                                     <img className='row_poster-trending'  src={`${base_url}${movie.backdrop_path}`} alt={movie.name || movie.original_title} />
                                 </Link>)
                         } else {
