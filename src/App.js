@@ -6,11 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./Home";
 import DetailPage from "./DetailPage/DetailPage";
+import SignIn from "./SignIn/SignIn";
 
 function App() {
   return (
     <div className="app">
-      <Nav />
+      {/* <Nav />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -18,7 +19,8 @@ function App() {
             <Route exact path="/detail/:id" element={<DetailPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <SignIn />
       <Footer />
     </div>
   );
