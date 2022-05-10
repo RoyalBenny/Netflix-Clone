@@ -34,6 +34,14 @@ const Banner = () => {
         }
       }
     >
+      {/* <div className="banner_iframe" disabled>
+      <iframe className="banner_background"
+        width="420"
+        height="345"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&controls=0"
+        
+      ></iframe>
+      </div> */}
       <div className="banner__contents">
         <h1 className="banner__title">
           {movie?.title || movie?.original_title || movie?.name}
@@ -47,7 +55,7 @@ const Banner = () => {
           {movie?.overview && truncate(movie?.overview, 100)}
         </div>
       </div>
-      <div className="banner--fadeBottom"/>
+      <div className="banner--fadeBottom" />
     </header>
   );
 };
