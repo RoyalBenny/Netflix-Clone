@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import netflix from './image/netflix.png';
 import profile from './image/profile-icon.jpg';
 import './Nav.css';
+import {useNavigate} from 'react-router-dom'
+
 function Nav() {
     const [show,setShow] = useState(false)
-
+    const navigate = useNavigate()
     useEffect(()=>{
         window.addEventListener("scroll",()=>{
             if(window.scrollY>100){
@@ -24,6 +26,7 @@ function Nav() {
         <img className='netflix' src={netflix} alt='Netflix Logo'/>
         <img className='profile' onClick={()=>{
             localStorage.setItem("isLoggedIn",false)
+            navigate('/hero')
         }} src={profile} alt='profile icon'/>
     </div>
   )

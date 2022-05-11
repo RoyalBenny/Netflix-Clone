@@ -11,16 +11,11 @@ const SignIn = () => {
   const [keepSignIn, setKeepSignIn] = useState(false);
 
   function onSubmit(event) {
-    alert(
-      JSON.stringify({
-        email: email,
-        password: password,
-        keepSignIn: keepSignIn,
-      })
-    );
+    if(email.length>0 && password.length>0){
     localStorage.setItem("isLoggedIn", true)
     navigate('/')
     event.preventDefault();
+    }
   }
   return (
     // <div className="sign-in">
@@ -80,6 +75,7 @@ const SignIn = () => {
                         className="form-label"
                       ></label>
                       <input
+                        required
                         type="email"
                         className="form-control signin_input"
                         id="exampleInputEmail1"
@@ -99,6 +95,7 @@ const SignIn = () => {
 
                       ></label>
                       <input
+                        required
                         type="password"
                         className="form-control signin_input"
                         id="exampleInputPassword1"

@@ -19,6 +19,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
+          <Route path="/navbar/com" element={<Nav/>}/>
           <Route path="/Hero" element={<Hero/>} />
           <Route path='/login' element={<SignIn/>}/>
           <Route path="/" element={<ProtectedRoute />}>

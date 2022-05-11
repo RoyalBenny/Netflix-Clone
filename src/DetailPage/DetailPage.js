@@ -86,7 +86,7 @@ function DetailPage() {
         </div>
       </header>
       <Row title='Action Movies' fetchURL={request.fetchActionMovies} />
-      <Row title='Comdey Movies' fetchURL={request.fetchComedyMovies} />
+      <Row title='Horror Movies' fetchURL={request.fetchHorrorMovies} />
     </div>
   )
 }

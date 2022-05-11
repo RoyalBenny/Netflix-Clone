@@ -65,6 +65,7 @@
     padding-bottom: 2px;
     transition: transform 300ms;
     display: flex;
+    cursor: pointer;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
