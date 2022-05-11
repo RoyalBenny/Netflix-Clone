@@ -25,6 +25,7 @@ function Nav() {
     <div className={`nav-bar ${show && 'nav-bar-scroll'}` }>
         <img className='netflix' src={netflix} alt='Netflix Logo'/>
         <img className='profile' onClick={()=>{
+            alert("Logged out")
             localStorage.setItem("isLoggedIn",false)
             navigate('/hero')
         }} src={profile} alt='profile icon'/>

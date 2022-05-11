@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const navigate = useNavigate()
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("1234");
   const [keepSignIn, setKeepSignIn] = useState(false);
 
   function onSubmit(event) {
@@ -100,6 +100,7 @@ const SignIn = () => {
                         className="form-control signin_input"
                         id="exampleInputPassword1"
                         placeholder="Password"
+                        value={password}
                         onChange={(event) => {
                           setPassword(event.target.value);
                         }}
